@@ -1,0 +1,4 @@
+{
+  "coins": ["bitcoin", "litecoin", "ethereum", "cardano"],
+  "refresh-rate": "5"
+}
