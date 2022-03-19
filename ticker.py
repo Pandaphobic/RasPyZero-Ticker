@@ -35,6 +35,17 @@ ltcLogo = (
         0b01111
 )
 
+ftmLogo = ( 
+  0b01000,
+        0b01111,
+        0b11111,
+        0b11000,
+        0b11110,
+        0b11110,
+        0b11000,
+        0b11000
+)
+
 ethLogo = ( 
         0b00000,
         0b11111,
@@ -60,8 +71,8 @@ lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
 
 # Create Character
 lcd.create_char(0, adaLogo)
-lcd.create_char(1, btcLogo)
-lcd.create_char(2, ltcLogo)
+lcd.create_char(1, ftmLogo)
+lcd.create_char(2, btcLogo)
 lcd.create_char(3, ethLogo)
 
 output = []
@@ -86,7 +97,7 @@ def getData(symbol):
   output.append(symbol + " " + title + spaces + "$" + coinOutput + '\r\n')
   
 # crontab has a hard time with the config file
-coins = ('cardano', 'bitcoin', 'litecoin', 'ethereum')
+coins = ('cardano', 'fatnom', 'bitcoin', 'ethereum')
 
 for idx, x in enumerate(coins):
   # idx is the index of the current item
